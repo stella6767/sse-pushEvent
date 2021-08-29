@@ -1,0 +1,5 @@
+package com.example.sse.service;
+
+public class SinkService {
+
+}

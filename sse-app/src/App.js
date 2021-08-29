@@ -13,11 +13,11 @@ function App() {
       eventSource = new EventSource("http://localhost:8080/time");
 
       //Custom listener
-      eventSource.addEventListener("Progress", (event) => {
-        const result = JSON.parse(event.data);
-        console.log("received:", result);
-        setData(result)
-      });
+      // eventSource.addEventListener("Progress", (event) => {
+      //   const result = JSON.parse(event.data);
+      //   console.log("received:", result);
+      //   setData(result)
+      // });
 
       eventSource.onopen = (event) => {
         console.log("connection opened")
