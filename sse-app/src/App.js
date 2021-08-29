@@ -6,6 +6,7 @@ function App() {
 
   const [listening, setListening] = useState(false);
   const [data, setData] = useState([]);
+  const [value, setValue] = useState(null);
   let eventSource = undefined;
 
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
       eventSource.onmessage = (event) => {
         console.log("result", event.data);
         setData(old => [...old, event.data])
+        setValue(event.data);
       }
       
       eventSource.onerror = (event) => {
@@ -46,14 +48,26 @@ function App() {
 
   }, [])
 
+
+  const checkData = () =>{
+
+    console.log(data);
+  }
+
   return (
     <div className="App">
+      <button onClick={checkData}>확인</button>
       <header className="App-header">
         Received Data
         {data.map(d =>
           <span key={d}>{d}</span>
         )}
+
       </header>
+      <div>
+      value: {value}
+
+      </div>
     </div>
   );
 }

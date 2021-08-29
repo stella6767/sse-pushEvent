@@ -34,7 +34,7 @@ public class SinkService {
 		//sseController.well("되면 놀랄 일이군.");
 		//sseController.streamDateTime();	
 		
-		mySseEmitter.sseEmitter.send("hoho");
+		mySseEmitter.sseEmitter.send("haha");
 		
 		return "ok";
 	}
